@@ -7,9 +7,12 @@ public sealed class Player : MonoBehaviour {
 
   public int hp = 10;
 
+  public int points = 0;
+
   private static Player instance;
 
   public Text hpText;
+  public Text scoreText;
 
   private Player () {}
 
@@ -32,9 +35,11 @@ public sealed class Player : MonoBehaviour {
 
   private void FixedUpdate () {
     if(hp>0)
-      hpText.text = hp.ToString();
+      hpText.text = "HP: "+hp.ToString();
     else
       hpText.text = "Game Over!";
+
+    scoreText.text = "Pontos: "+points.ToString();
   }
 
 }
